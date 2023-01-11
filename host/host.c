@@ -101,7 +101,7 @@ int main(int argc, const char* argv[])
 	}
     }
     ret = 0;
-exit:
+    exit:
     if (enclave)
     // oe_terminate_enclave(enclave);
         oe_terminate_enclave(enclave);
