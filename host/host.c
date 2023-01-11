@@ -20,11 +20,12 @@ bool checkRun(int* argc, const char* argv[])
 
 int main(int argc, const char* argv[])
 {
-    oe_result_t result;
     int ret = 1;
+    oe_result_t result;
     oe_enclave_t* enclave = NULL;
 
     uint32_t flags = OE_ENCLAVE_FLAG_DEBUG;
+
     if (checkRun(&argc, argv))
     {
         flags |= OE_ENCLAVE_FLAG_SIMULATE;
@@ -67,10 +68,10 @@ int main(int argc, const char* argv[])
     int* res = malloc(sizeof(int)); 
     int counter = 0;
      
-    for ( counter=0; counter<maxVal; counter++){
-    	printf("Make a guess\n");
+    for ( counter=0; counter<maxVal; cpt++){
+    	printf("Enter your guess\n");
         scanf("%d", &curVal);
-        printf("You guess is: %d\n", curVal);
+        printf("You guessed: %d\n", curVal);
 		
 	result = checkStatus(enclave, curVal, res);
     	if (result != OE_OK)
